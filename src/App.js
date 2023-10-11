@@ -6,7 +6,7 @@ import PasswordUpdate from "../src/Components/PasswordUpdate";
 // import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
-  const url = "https://password-reset-87fo.onrender.com";
+  const url = "https://passwordreset-7ug1.onrender.com";
 
   return (
     <Router>
