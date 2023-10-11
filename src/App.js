@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Signup from "../src/Components/Signup";
+import Login from "../src/Components/Login";
+import PasswordReset from "../src/Components/PasswordReset";
+import PasswordUpdate from "../src/Components/PasswordUpdate";
+// import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
+  const url = "https://password-reset-87fo.onrender.com";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login url={url} />}></Route>
+        <Route path="/Signup" element={<Signup url={url} />}></Route>
+        <Route
+          path="/forgotpassword"
+          element={<PasswordReset url={url} />}
+        ></Route>
+        <Route
+          path="/passwordreset/:id"
+          element={<PasswordUpdate url={url} />}
+        ></Route>
+      </Routes>
+    </Router>
   );
 }
 
